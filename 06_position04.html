@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 화살표 만들기</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .main_visual {
+            position: relative;
+        }
+
+        .main_visual_slide {
+            height: 800px;
+            background: #ddd;
+        }
+
+        .main_visual .arrows {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 999;
+
+            max-width: 1400px;
+            width: 100%;
+            transform: translate(-50%, -50%);
+
+            background: rgb(122, 153, 127);
+        }
+
+        .main_visual .arrows button {
+            position: absolute;
+            top: 0;
+
+            font-size: 0;
+            background: transparent;
+            border: none;
+
+            width: 120px;
+            height: 40px;
+
+            background: #fff;
+        }
+
+        .main_visual .arrows .prev {
+            left: 0;
+        }
+
+        .main_visual .arrows .next {
+            right: 0;
+        }
+
+        .main_visual .arrows .prev::before {
+            content: "";
+            position: absolute;
+            top: 24px;
+            left: 12px;
+            right: 12px;
+            height: 1px;
+            background: #333;
+        }
+
+        .main_visual .arrows .prev::after {
+            content: "";
+            position: absolute;
+            top: 24px;
+            left: 12px;
+            width: 20px;
+            height: 1px;
+            background: #333;
+
+            transform: rotate(-30deg);
+            transform-origin: left;
+        }
+
+        .main_visual .arrows .next::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 12px;
+            right: 12px;
+            height: 1px;
+            background: #333;
+        }
+
+        .main_visual .arrows .next::after {
+            content: "";
+            position: absolute;
+            top: 19px;
+            right: 13px;
+            width: 10px;
+            height: 10px;
+            border-top: 1px solid #333;
+            border-right: 1px solid #333;
+            transform: rotate(45deg);
+            transform-origin: right;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="main_visual">
+        <div class="main_visual_slide">
+            slide
+        </div>
+        <div class="arrows">
+            <button class="prev">prev</button>
+            <button class="next">next</button>
+        </div>
+    </section>
+</body>
+
+</html>
